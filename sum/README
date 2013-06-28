@@ -1,0 +1,65 @@
+You are tasked with writing a C or C++ program that will calculate the sum
+of values stored in a user-specified binary file. The sum must be limited
+to 64-bit precision.
+
+------[ Input Specification
+
+The program will be provided only one argument, the path to the binary file
+containing the list of integers. The binary file consists of an array of
+little-endian 32-bit unsigned integers. The examples directory contains a
+file "simple.txt" that contains five integers: 1, 2, 3, 4 and 5. Malformed
+input is not possible and does not need to be handled.
+
+------[ Output Specification
+
+The output of the program must be a single line consisting of a human-readable
+base-ten form of the sum of values provided in the input. The sum may only
+support 64-bit bits of precision.
+
+    Example usage for "simple.txt":
+    ,-------------------------------------,
+    | shell$ ./sum ../examples/simple.txt |
+    | 15                                  |
+    |                                     |
+    '-------------------------------------'
+
+------[ Additional Constraints
+
+The program must be able to handle input files consisting of more than one billion
+integers. Please make an effort to make your sum program perform well for larger
+inputs.
+
+------[ Submission Instructions
+
+Please provide a .tar.gz file of an archive containing a directory that is
+named in the following format: <first letter of first name><last name>-2.
+The resulting .tar.gz file would then be called
+<first letter of first name><last name>-2.tar.gz. For example, if "John Doe"
+was your name then your program would be contained in a directory "jdoe-2"
+and archived to "jdoe-2.tar.gz". On my system, I would create "jdoe-2.tar.gz"
+with: "tar cvfz jdoe-2.tar.gz jdoe-2". An example Makefile and sum.c is provided
+in the template directory. Please use the Makefile provided in this directory.
+
+    Example
+    ,--------------------------------------------------------,
+    | shell$ ls -l jdoe-2                                    |
+    | total 0                                                |
+    | -rw-r--r-- 1 developer users 0 Jan 11 12:55 Makefile   |
+    | -rw-r--r-- 1 developer users 0 Jan 11 12:55 sum.c      |
+    | shell$ tar cvfz jdoe-2.tar.gz jdoe-2                   |
+    | jdoe-2/                                                |
+    | jdoe-2/Makefile                                        |
+    | jdoe-2/sum.c                                           |
+    | shell$ file jdoe-2.tar.gz                              |
+    | jdoe-2.tar.gz: gzip compressed data, from Unix, last   |
+    |    modified: Wed Jan 11 12:56:03 2012                  |
+    '--------------------------------------------------------'
+
+The version of GCC we are using is:
+gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-50)
+
+The build and execution environment is a stock CentOS 5 installation. Both
+"gcc" and "g++" are available. The machine contains eight
+"Intel(R) Xeon(R) CPU L5630" x86-64 cores (across two sockets) and contains
+24 GB of RAM.
+
